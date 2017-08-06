@@ -1,5 +1,5 @@
 import HelloCtrl from './hello';
 
 export {
-    HelloCtrl,
+  HelloCtrl as default,
 };

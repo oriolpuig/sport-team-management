@@ -4,6 +4,7 @@
   "description": "Website of Celtic Les Corts",
   "main": "./server/app.js",
   "scripts": {
+    "lint": "eslint .",
     "start": "nodemon -L --debug=0.0.0.0:5858 ./server/app.js --exec babel-node ./server/app.js"
   },
   "repository": "https://github.com/oriolpuig/celtic-les-corts-website.git",
@@ -20,6 +21,11 @@
     "morgan": "^1.8.2"
   },
   "devDependencies": {
+    "eslint": "^4.4.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.7.0",
     "nodemon": "^1.11.0"
   }
 }

@@ -1,5 +1,5 @@
 import express from 'express';
-import { HelloCtrl } from './controllers';
+import HelloCtrl from './controllers';
 
 const router = express.Router();
 
