@@ -1,0 +1,21 @@
+version: "2"
+services:
+  server:
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - "3000:3000"
+      - "5858:5858"
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes_from:
+      - mongodata
+  mongodata:
+    image: tianon/true
+    volumes:
+      - /data/db

@@ -1,0 +1,25 @@
+{
+  "name": "celtic-les-corts-website",
+  "version": "0.0.0",
+  "description": "Website of Celtic Les Corts",
+  "main": "./server/app.js",
+  "scripts": {
+    "start": "nodemon -L --debug=0.0.0.0:5858 ./server/app.js --exec babel-node ./server/app.js"
+  },
+  "repository": "https://github.com/oriolpuig/celtic-les-corts-website.git",
+  "author": "Oriol Puig <oriol.puig90@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.5",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
