@@ -1,5 +1,5 @@
 import express from 'express';
-import HelloCtrl, { CompetitionCtrl, LeagueCtrl, SeasonCtrl, TeamCtrl } from './controllers';
+import HelloCtrl, { CompetitionCtrl, LeagueCtrl, PlayerCtrl, SeasonCtrl, TeamCtrl } from './controllers';
 
 const router = express.Router();
 
@@ -19,6 +19,13 @@ router.get('/league/:id', LeagueCtrl.getById);
 router.post('/league', LeagueCtrl.save);
 router.put('/league/:id', LeagueCtrl.update);
 router.delete('/league/:id', LeagueCtrl.delete);
+
+// PlayerCtrl
+router.get('/player', PlayerCtrl.getAll);
+router.get('/player/:id', PlayerCtrl.getById);
+router.post('/player', PlayerCtrl.save);
+router.put('/player/:id', PlayerCtrl.update);
+router.delete('/player/:id', PlayerCtrl.delete);
 
 // SeasonCtrl
 router.get('/season', SeasonCtrl.getAll);
