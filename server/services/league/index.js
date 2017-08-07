@@ -1,5 +1,5 @@
 /* eslint class-methods-use-this:
-["error", { "exceptMethods": ["getAll", "getById", "save", "update", "delete"] }] */
+["error", { "exceptMethods": ["update"] }] */
 
 import League from '../../models/League';
 import BaseService from '../baseService';
