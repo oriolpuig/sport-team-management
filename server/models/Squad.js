@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import Team from './Team';
-import Player from './Player';
 
 const Schemma = mongoose.Schema;
 
@@ -11,8 +9,14 @@ const SquadSchemma = Schemma({
   pos: {
     type: String,
   },
-  team: Team,
-  player: Player,
+  team_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Team',
+  },
+  player_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Player',
+  },
 });
 
 const SquadModel = mongoose.model('Squad', SquadSchemma);

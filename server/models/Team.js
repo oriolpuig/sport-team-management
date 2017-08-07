@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import Competition from './Competition';
 
 const Schemma = mongoose.Schema;
 
@@ -10,7 +9,10 @@ const TeamSchemma = Schemma({
   code: {
     type: String,
   },
-  competitions: [Competition],
+  competition_ids: [{
+    type: Schemma.Types.ObjectId,
+    ref: 'Competition',
+  }],
 });
 
 const TeamModel = mongoose.model('Team', TeamSchemma);

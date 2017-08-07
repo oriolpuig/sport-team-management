@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import Player from './Player';
-import Match from './Match';
 
 const Schemma = mongoose.Schema;
 
@@ -12,8 +10,14 @@ const GoalSchemma = Schemma({
     type: Boolean,
     defaul: false,
   },
-  player: Player,
-  match: Match,
+  player_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Player',
+  },
+  match_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Match',
+  },
 });
 
 const GoalModel = mongoose.model('Goal', GoalSchemma);

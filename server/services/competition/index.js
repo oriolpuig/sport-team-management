@@ -16,8 +16,8 @@ class CompetitionService extends BaseService {
         competition.start_at = competitionToUpdate.start_at;
         competition.end_at = competitionToUpdate.end_at;
         competition.num = competitionToUpdate.num;
-        competition.season = competitionToUpdate.season;
-        competition.league = competitionToUpdate.league;
+        competition.season_id = competitionToUpdate.season_id;
+        competition.league_id = competitionToUpdate.league_id;
         return super.update(competition);
       })
       .then(updatedCompetition => Promise.resolve(updatedCompetition))

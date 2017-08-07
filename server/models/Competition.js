@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import League from './League';
-import Season from './Season';
 
 const Schemma = mongoose.Schema;
 
@@ -18,8 +16,14 @@ const CompetitionSchemma = Schemma({
   num: {
     type: Number,
   },
-  season: Season,
-  league: League,
+  season_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Season',
+  },
+  league_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'League',
+  },
 });
 
 const CompetitionModel = mongoose.model('Competition', CompetitionSchemma);

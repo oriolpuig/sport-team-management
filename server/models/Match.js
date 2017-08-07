@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import Team from './Team';
-import Round from './Round';
 
 const Schemma = mongoose.Schema;
 
@@ -12,16 +10,28 @@ const MatchSchemma = Schemma({
     type: Date,
     default: Date.now,
   },
-  home: Team,
-  away: Team,
+  home_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Team',
+  },
+  away_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Team',
+  },
   score_h: {
     type: Number,
   },
   score_a: {
     type: Number,
   },
-  winner: Team,
-  round: Round,
+  winner_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Team',
+  },
+  round: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Round',
+  },
 });
 
 const MatchModel = mongoose.model('Match', MatchSchemma);

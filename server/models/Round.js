@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import Competition from './Competition';
 
 const Schemma = mongoose.Schema;
 
@@ -17,7 +16,10 @@ const RoundSchemma = Schemma({
   end_at: {
     type: Date,
   },
-  competition: Competition,
+  competition_id: {
+    type: Schemma.Types.ObjectId,
+    ref: 'Competition',
+  },
 });
 
 const RoundModel = mongoose.model('Round', RoundSchemma);
