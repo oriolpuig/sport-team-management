@@ -12,10 +12,10 @@ class GoalService extends BaseService {
   update(id, goalToUpdate) {
     return super.getById(id)
       .then((goal) => {
-        goal.dorsal = goalToUpdate.dorsal;
-        goal.pos = goalToUpdate.pos;
-        goal.team_id = goalToUpdate.team_id;
+        goal.minute = goalToUpdate.minute;
+        goal.penalty = goalToUpdate.penalty;
         goal.player_id = goalToUpdate.player_id;
+        goal.match_id = goalToUpdate.match_id;
         return super.update(goal);
       })
       .then(updatedGoal => Promise.resolve(updatedGoal))
