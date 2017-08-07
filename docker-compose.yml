@@ -1,12 +1,24 @@
 version: "2"
 services:
+  # frontend:
+  #   image: node:7.7
+  #   working_dir: /frontend
+  #   command: npm start
+  #   volumes:
+  #       - ./frontend:/frontend
+  #   ports:
+  #       - "3000:3000"
   server:
-    build: .
+    image: node:7.7
+    working_dir: /server
+    command: npm start
     volumes:
-      - ./:/app
+        - ./server:/server
     ports:
-      - "3000:3000"
-      - "5858:5858"
+        - "8000:8000"
+        - "5858:5858"
+    environment:
+        NODE_ENV: ${NODE_ENV}
     links:
       - mongo
   mongo:
@@ -19,3 +31,57 @@ services:
     image: tianon/true
     volumes:
       - /data/db
+
+#-- OLD
+
+# version: "2"
+# services:
+#   server:
+#     build: .
+#     volumes:
+#       - ./:/app
+#     ports:
+#       - "3000:3000"
+#       - "5858:5858"
+#     links:
+#       - mongo
+#   mongo:
+#     image: mongo
+#     ports:
+#       - "27017:27017"
+#     volumes_from:
+#       - mongodata
+#   mongodata:
+#     image: tianon/true
+#     volumes:
+#       - /data/db
+
+
+#-- BASE
+
+# version: '2'
+# services:
+#     db:
+#         ports:
+#             - "9432:5432"
+#     frontend:
+#         image: node:7.7
+#         working_dir: /frontend
+#         command: npm run develop
+#         volumes:
+#             - ./frontend:/frontend
+#         ports:
+#             - "3000:3000"
+#     backend:
+#         image: node:7.7
+#         working_dir: /backend
+#         command: npm run develop
+#         volumes:
+#             - ./backend:/backend
+#             - ./backend/media:/media
+#         ports:
+#             - "8000:8000"
+#         environment:
+#             NODE_ENV: ${NODE_ENV}
+#         depends_on:
+#             - db

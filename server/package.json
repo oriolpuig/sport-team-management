@@ -2,11 +2,12 @@
   "name": "celtic-les-corts-website",
   "version": "0.0.0",
   "description": "Website of Celtic Les Corts",
-  "main": "./server/app.js",
+  "main": "./app.js",
   "scripts": {
     "lint": "eslint .",
-    "start": "nodemon -L --debug=0.0.0.0:5858 ./server/app.js --exec babel-node ./server/app.js",
-    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --colors --R spec ./server/**/*.spec.js"
+    "start": "nodemon -L --debug=0.0.0.0:5858 app.js --exec babel-node app.js",
+    "prestart": "npm install",
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --colors --R spec ./**/*.spec.js"
   },
   "repository": "https://github.com/oriolpuig/celtic-les-corts-website.git",
   "author": "Oriol Puig <oriol.puig90@gmail.com>",

@@ -11,7 +11,7 @@ import ApiRoutes from './routes';
 // configuration =========
 // =======================
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.urlencoded({ extended: 'true' })); // parse application/x-www-form-urlencoded
