@@ -5,7 +5,8 @@
   "main": "./server/app.js",
   "scripts": {
     "lint": "eslint .",
-    "start": "nodemon -L --debug=0.0.0.0:5858 ./server/app.js --exec babel-node ./server/app.js"
+    "start": "nodemon -L --debug=0.0.0.0:5858 ./server/app.js --exec babel-node ./server/app.js",
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --colors --R spec ./server/**/*.spec.js"
   },
   "repository": "https://github.com/oriolpuig/celtic-les-corts-website.git",
   "author": "Oriol Puig <oriol.puig90@gmail.com>",
@@ -26,6 +27,11 @@
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.7.0",
-    "nodemon": "^1.11.0"
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0",
+    "should": "^11.2.1",
+    "sinon": "^3.0.0",
+    "sinon-mongoose": "^2.0.2"
   }
 }
