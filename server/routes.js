@@ -1,7 +1,14 @@
 import express from 'express';
-import HelloCtrl, { LeagueCtrl, SeasonCtrl } from './controllers';
+import HelloCtrl, { CompetitionCtrl, LeagueCtrl, SeasonCtrl } from './controllers';
 
 const router = express.Router();
+
+// CompetitionCtrl
+router.get('/competition', CompetitionCtrl.getAll);
+router.get('/competition/:id', CompetitionCtrl.getById);
+router.post('/competition', CompetitionCtrl.save);
+router.put('/competition/:id', CompetitionCtrl.update);
+router.delete('/competition/:id', CompetitionCtrl.delete);
 
 // HelloCtrl - Say hello method
 router.get('/hello', HelloCtrl.sayHello);
