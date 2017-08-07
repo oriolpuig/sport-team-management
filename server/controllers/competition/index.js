@@ -4,7 +4,6 @@ import { CompetitionService } from '../../services';
 
 class CompetitionCtrl {
   getAll(req, res) {
-
     const competitionService = new CompetitionService();
     competitionService.getAll()
       .then(competitions => res.json(competitions))

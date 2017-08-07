@@ -2,6 +2,7 @@ import CompetitionCtrl from './competition';
 import GoalCtrl from './goal';
 import HelloCtrl from './hello';
 import LeagueCtrl from './league';
+import MatchCtrl from './match';
 import PlayerCtrl from './player';
 import RoundCtrl from './round';
 import SeasonCtrl from './season';
@@ -13,6 +14,7 @@ export {
   GoalCtrl,
   HelloCtrl as default,
   LeagueCtrl,
+  MatchCtrl,
   PlayerCtrl,
   RoundCtrl,
   SeasonCtrl,

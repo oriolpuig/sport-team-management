@@ -28,7 +28,7 @@ const MatchSchemma = Schemma({
     type: Schemma.Types.ObjectId,
     ref: 'Team',
   },
-  round: {
+  round_id: {
     type: Schemma.Types.ObjectId,
     ref: 'Round',
   },
