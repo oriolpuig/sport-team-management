@@ -6,7 +6,7 @@ class SeasonCtrl {
   getAll(req, res) {
     const seasonService = new SeasonService();
     seasonService.getAll()
-      .then(result => res.json(result))
+      .then(seasons => res.json(seasons))
       .catch(error => res.json(error));
   }
 
@@ -14,14 +14,14 @@ class SeasonCtrl {
     const seasonService = new SeasonService();
     const id = req.params.id;
     seasonService.getById(id)
-      .then(result => res.json(result))
+      .then(season => res.json(season))
       .catch(error => res.json(error));
   }
 
   save(req, res) {
     const seasonService = new SeasonService();
     seasonService.save(req.body)
-      .then(result => res.json(result))
+      .then(season => res.json(season))
       .catch(error => res.json(error));
   }
 
@@ -30,7 +30,7 @@ class SeasonCtrl {
     const id = req.params.id;
     const season = req.body;
     seasonService.update(id, season)
-      .then(result => res.json(result))
+      .then(s => res.json(s))
       .catch(error => res.json(error));
   }
 
