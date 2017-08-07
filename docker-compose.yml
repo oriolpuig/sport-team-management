@@ -1,13 +1,13 @@
 version: "2"
 services:
-  # frontend:
-  #   image: node:7.7
-  #   working_dir: /frontend
-  #   command: npm start
-  #   volumes:
-  #       - ./frontend:/frontend
-  #   ports:
-  #       - "3000:3000"
+  frontend:
+    image: node:7.7
+    working_dir: /frontend
+    command: npm start
+    volumes:
+        - ./frontend:/frontend
+    ports:
+        - "3000:3000"
   server:
     image: node:7.7
     working_dir: /server

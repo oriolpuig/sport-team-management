@@ -1,7 +1,7 @@
 {
   "name": "celtic-les-corts-website",
   "version": "0.0.0",
-  "description": "Website of Celtic Les Corts",
+  "description": "API of Celtic Les Corts",
   "main": "./app.js",
   "scripts": {
     "lint": "eslint .",
