@@ -6,7 +6,7 @@ const GoalSchemma = Schemma({
   minute: {
     type: Number,
   },
-  penaly: {
+  penalty: {
     type: Boolean,
     defaul: false,
   },
