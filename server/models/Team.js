@@ -9,10 +9,10 @@ const TeamSchemma = Schemma({
   code: {
     type: String,
   },
-  competition_ids: [{
+  competition_id: {
     type: Schemma.Types.ObjectId,
     ref: 'Competition',
-  }],
+  },
 });
 
 const TeamModel = mongoose.model('Team', TeamSchemma);
