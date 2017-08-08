@@ -8,7 +8,7 @@ module.exports = {
     extensions: ['.js', '.jsx', 'json'],
   },
   entry: {
-    app: './index.js',
+    app: './index.jsx',
     vendor: [
       'react',
       'react-dom',
@@ -80,6 +80,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     // Caching vendors with manifest
     // https://webpack.js.org/guides/code-splitting-libraries/#manifest-file
     new webpack.optimize.CommonsChunkPlugin({
