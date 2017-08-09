@@ -1,0 +1,24 @@
+// Reset
+@import 'reset.scss';
+
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+@import '_variables.scss';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+// App Components
+@import 'common/common.scss';
+@import 'components/components.scss';
+
+// Global CSS
+
+body {
+  outline: none;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.active {
+  color: red;
+}

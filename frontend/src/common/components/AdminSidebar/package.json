@@ -1,0 +1,6 @@
+{
+  "name": "AdminSidebar",
+  "main": "./AdminSidebar.jsx",
+  "private": true,
+  "version": "0.0.0"
+}
