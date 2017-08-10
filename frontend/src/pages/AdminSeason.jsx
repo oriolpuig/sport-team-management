@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Switch, Redirect, Route } from 'react-router-dom';
-import { AdminSeasonAdd, AdminSeasonList } from '../containers';
+import { AdminSeasonAdd, AdminSeasonList, AdminSeasonUpdate } from '../containers';
 
 const AdminSeason = () => (
   <div className="wrapper wrapper-content animated fadeInRight">
@@ -24,6 +24,7 @@ const AdminSeason = () => (
       <div className="col-lg-10">
         <Route exact path="/admin/seasons/list" component={AdminSeasonList}></Route>
         <Route exact path="/admin/seasons/add" component={AdminSeasonAdd}></Route>
+        <Route exact path="/admin/seasons/update/:seasonid" component={AdminSeasonUpdate}></Route>
         <Redirect from="/admin/seasons" to="/admin/seasons/list"></Redirect>
       </div>
     </div>
