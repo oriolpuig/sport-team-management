@@ -48,22 +48,22 @@ module.exports = {
       },
       // Loading glyphicons => https://github.com/gowravshekar/bootstrap-webpack
       // Using here url-loader and file-loader
-      {
-        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream',
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml',
-      },
+      // {
+      //   test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: 'url-loader?limit=10000&mimetype=application/font-woff',
+      // },
+      // {
+      //   test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: 'url-loader?limit=10000&mimetype=application/octet-stream',
+      // },
+      // {
+      //   test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: 'file-loader',
+      // },
+      // {
+      //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: 'url-loader?limit=10000&mimetype=image/svg+xml',
+      // },
       {
         test: /\.(jpg|gif|png|svg)$/,
         loader: 'url-loader',
@@ -77,6 +77,15 @@ module.exports = {
         loader: 'style-loader!css-loader?modules',
         include: /flexboxgrid/,
       },
+      // Font-Awesome
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?sourceMap'
+      },
+      {
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader?name=fonts/[name].[ext]'
+      }
     ],
   },
   plugins: [

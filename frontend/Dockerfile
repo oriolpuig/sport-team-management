@@ -7,7 +7,7 @@ COPY package.json /frontend
 RUN npm install
 
 COPY . /frontend
-RUN npm rebuild node-sass
+RUN npm rebuild node-sass --force
 
 EXPOSE 3000
 
