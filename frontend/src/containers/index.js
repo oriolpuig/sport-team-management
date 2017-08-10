@@ -1,7 +1,5 @@
-import App from './App';
-import HelloWorld from './HelloWorld';
+import AdminSeasonList from './AdminSeasonList';
 
 export {
-  App as default,
-  HelloWorld,
+  AdminSeasonList,
 };

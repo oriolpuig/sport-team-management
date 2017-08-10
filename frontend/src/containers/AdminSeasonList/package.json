@@ -1,0 +1,6 @@
+{
+  "name": "AdminSeasonList",
+  "main": "./AdminSeasonList.jsx",
+  "private": true,
+  "version": "0.0.0"
+}

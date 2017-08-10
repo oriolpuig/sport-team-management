@@ -5,6 +5,12 @@ $icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 @import '_variables.scss';
 @import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
+$fa-font-path: "~font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+// Admin theme
+@import 'theme/inspina/style.scss';
+
 // App Components
 @import 'common/common.scss';
 @import 'components/components.scss';
@@ -21,4 +27,8 @@ body {
 
 .active {
   color: red;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
