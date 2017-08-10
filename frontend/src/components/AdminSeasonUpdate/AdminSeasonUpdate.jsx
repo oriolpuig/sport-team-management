@@ -13,6 +13,13 @@ class AdminSeasonUpdate extends Component {
     this.submit = this.submit.bind(this);
   }
 
+  componentWillMount() {
+    if (this.props.match.params.seasonid) {
+      debugger;
+      this.props.getSeason(this.props.match.params.seasonid);
+    }
+  }
+
   disableButton() {
     this.setState({
       canSubmit: false
@@ -26,15 +33,32 @@ class AdminSeasonUpdate extends Component {
   }
 
   submit(model) {
-    this.props.updateSeason(model);
+    this.props.updateSeason(this.props.currentSeason._id, model);
   }
 
   render() {
     return (
-      <Formsy.Form onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
-        <MyOwnInput name="title" value="2" required />
-        <button type="submit" disabled={!this.state.canSubmit}>Submit</button>
-      </Formsy.Form>
+      <div className="ibox float-e-margins">
+        <div className="ibox-title">
+          <h5>Update season</h5>
+          <div className="ibox-tools">
+            <a className="collapse-link">
+              <i className="fa fa-chevron-up"></i>
+            </a>
+          </div>
+        </div>
+        <div className="ibox-content">
+          {
+            this.props.currentSeason ?
+              <Formsy.Form onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
+                <MyOwnInput name="title" value={this.props.currentSeason.title} required />
+                <button type="submit" disabled={!this.state.canSubmit}>Submit</button>
+              </Formsy.Form>
+              :
+              null
+          }
+        </div>
+      </div>
     );
   }
 }

@@ -2,6 +2,10 @@ import { SeasonService } from '../../services';
 
 /* ACTION TYPES
  =============================================================================================== */
+const GET_SEASON = 'season/GET_SEASON';
+const GET_SEASON_SUCCESS = 'season/GET_SEASON_SUCCESS';
+const GET_SEASON_FAIL = 'season/GET_SEASON_FAIL';
+
 const GET_SEASONS = 'season/GET_SEASONS';
 const GET_SEASONS_SUCCESS = 'season/GET_SEASONS_SUCCESS';
 const GET_SEASONS_FAIL = 'season/GET_SEASONS_FAIL';
@@ -31,6 +35,13 @@ export default function reducer(state = initState, action = {}) {
   const { type } = action;
 
   switch (type) {
+    case GET_SEASON:
+      return { ...state, currentSeason: null, isLoaded: false, isLoading: true };
+    case GET_SEASON_SUCCESS:
+      return { ...state, currentSeason: action.result, isLoaded: true, isLoading: false };
+    case GET_SEASON_FAIL:
+      return { ...state, currentSeason: null, isLoaded: false, isLoading: false };
+
     case GET_SEASONS:
       return { ...state, list: [], isLoaded: false, isLoading: true };
     case GET_SEASONS_SUCCESS:
@@ -58,6 +69,11 @@ export default function reducer(state = initState, action = {}) {
 
 /* ACTIONS
  =============================================================================================== */
+
+export const getSeason = (id) => ({
+  types: [GET_SEASON, GET_SEASON_SUCCESS, GET_SEASON_FAIL],
+  promise: () => SeasonService.getSeason(id),
+});
 
 export const getSeasons = () => ({
   types: [GET_SEASONS, GET_SEASONS_SUCCESS, GET_SEASONS_FAIL],

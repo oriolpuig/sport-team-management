@@ -20,7 +20,7 @@ class AdminSeasonList extends Component {
     return this.props.seasons.map((season, index) => {
       const itemKey = `season-list-${index}`;
       return (
-        <tr>
+        <tr key={itemKey}>
           <td>{index + 1}</td>
           <td>{season.title}</td>
           <td>

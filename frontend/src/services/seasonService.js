@@ -14,6 +14,17 @@ class SeasonService extends BaseService {
       .catch(error => Promise.reject(error));
   }
 
+  getSeason(id) {
+    return fetch(this.SERVICE_API_URL+ '/' + id, {
+      headers: { 'Content-Type': 'application/json' },
+      method: 'GET',
+    })
+      .then(this.checkStatus)
+      .then(this.parseJSON)
+      .then((response) => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
+  }
+
   saveSeason(newSeason) {
     const jsonBody = JSON.stringify(newSeason);
     return fetch(this.SERVICE_API_URL, {
