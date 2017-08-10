@@ -12,7 +12,8 @@ class AdminSeasonList extends Component {
   }
 
   _handleDelete(seasonId) {
-    alert(seasonId);
+    this.props.deleteSeason(seasonId)
+      .then(this.props.getSeasons());
   }
 
   renderRows() {

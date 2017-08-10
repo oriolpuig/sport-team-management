@@ -10,6 +10,14 @@ const SAVE_SEASON = 'season/SAVE_SEASON';
 const SAVE_SEASON_SUCCESS = 'season/SAVE_SEASON_SUCCESS';
 const SAVE_SEASON_FAIL = 'season/SAVE_SEASON_FAIL';
 
+const UPDATE_SEASON = 'season/UPDATE_SEASON';
+const UPDATE_SEASON_SUCCESS = 'season/UPDATE_SEASON_SUCCESS';
+const UPDATE_SEASON_FAIL = 'season/UPDATE_SEASON_FAIL';
+
+const DELETE_SEASON = 'season/DELETE_SEASON';
+const DELETE_SEASON_SUCCESS = 'season/DELETE_SEASON_SUCCESS';
+const DELETE_SEASON_FAIL = 'season/DELETE_SEASON_FAIL';
+
 /* REDUCER
  =============================================================================================== */
 const initState = {
@@ -31,12 +39,17 @@ export default function reducer(state = initState, action = {}) {
       return { ...state, list: [], isLoaded: false, isLoading: false };
 
     case SAVE_SEASON:
+    case UPDATE_SEASON:
+    case DELETE_SEASON:
       return { ...state, isLoaded: false, isLoading: true };
     case SAVE_SEASON_SUCCESS:
+    case UPDATE_SEASON_SUCCESS:
+    case DELETE_SEASON_SUCCESS:
       return { ...state, isLoaded: true, isLoading: false };
     case SAVE_SEASON_FAIL:
+    case UPDATE_SEASON_FAIL:
+    case DELETE_SEASON_FAIL:
       return { ...state, isLoaded: false, isLoading: false };
-
 
     default:
       return { ...state };
@@ -54,4 +67,14 @@ export const getSeasons = () => ({
 export const saveSeason = (newSeason) => ({
   types: [SAVE_SEASON, SAVE_SEASON_SUCCESS, SAVE_SEASON_FAIL],
   promise: () => SeasonService.saveSeason(newSeason),
+});
+
+export const updateSeason = (id, season) => ({
+  types: [UPDATE_SEASON, UPDATE_SEASON_SUCCESS, UPDATE_SEASON_FAIL],
+  promise: () => SeasonService.updateSeason(id, season),
+});
+
+export const deleteSeason = (id) => ({
+  types: [DELETE_SEASON, DELETE_SEASON_SUCCESS, DELETE_SEASON_FAIL],
+  promise: () => SeasonService.deleteSeason(id),
 });
