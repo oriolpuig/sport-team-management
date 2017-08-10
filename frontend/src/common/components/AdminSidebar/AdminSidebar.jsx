@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 
-// const AdminSidebar = props => (
-//   <sidebar>
-//     <nav>
-//       <NavNavLink activeClassName="active" to="/admin/dashboard">Dashboard</NavNavLink>
-//       <NavNavLink activeClassName="active" to="/admin/seasons">Seasons</NavNavLink>
-//     </nav>
-//   </sidebar>
-// );
-
 class AdminSidebar extends Component {
   componentDidMount() {
     const { menu } = this.refs;
