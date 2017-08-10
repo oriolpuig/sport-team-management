@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid';
-import { Menu } from '../common/components';
+import { Menu } from '../../components';
 
 const LandingLayout = () => (
   <Grid>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import DefaultLayout from './pages';
+import DefaultLayout from './common/layouts';
 
 import jquery from 'jquery';
 import metismenu from 'metismenu';

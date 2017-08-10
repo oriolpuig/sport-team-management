@@ -44,7 +44,7 @@ class AdminSidebar extends Component {
                             </div>
           </li>
           <li className={this.activeRoute("/admin/dashboard")}>
-            <Link to="/admin/dashboard"><FontAwesome name='rocket' /> <span className="nav-label">Dashboard</span></Link>
+            <Link to="/admin/dashboard"><i className="fa fa-th-large"></i> <span className="nav-label">Dashboard</span></Link>
           </li>
           <li className={this.activeRoute("/admin/seasons")}>
             <Link to="/admin/seasons"><i className="fa fa-th-large"></i> <span className="nav-label">Seasons</span></Link>

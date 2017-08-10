@@ -1,0 +1,6 @@
+{
+  "name": "LandingLayout",
+  "main": "./LandingLayout.jsx",
+  "private": true,
+  "version": "0.0.0"
+}
