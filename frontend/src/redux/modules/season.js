@@ -77,27 +77,27 @@ export default function reducer(state = initState, action = {}) {
 
 export const getSeason = (id) => ({
   types: [GET_SEASON, GET_SEASON_SUCCESS, GET_SEASON_FAIL],
-  promise: () => SeasonService.getSeason(id),
+  promise: () => SeasonService.getById(id),
 });
 
 export const getSeasons = () => ({
   types: [GET_SEASONS, GET_SEASONS_SUCCESS, GET_SEASONS_FAIL],
-  promise: () => SeasonService.getSeasons(),
+  promise: () => SeasonService.getAll(),
 });
 
 export const saveSeason = (newSeason) => ({
   types: [SAVE_SEASON, SAVE_SEASON_SUCCESS, SAVE_SEASON_FAIL],
-  promise: () => SeasonService.saveSeason(newSeason),
+  promise: () => SeasonService.save(newSeason),
 });
 
 export const updateSeason = (id, season) => ({
   types: [UPDATE_SEASON, UPDATE_SEASON_SUCCESS, UPDATE_SEASON_FAIL],
-  promise: () => SeasonService.updateSeason(id, season),
+  promise: () => SeasonService.update(id, season),
 });
 
 export const deleteSeason = (id) => ({
   types: [DELETE_SEASON, DELETE_SEASON_SUCCESS, DELETE_SEASON_FAIL],
-  promise: () => SeasonService.deleteSeason(id),
+  promise: () => SeasonService.delete(id),
 });
 
 export const setCurrentSeason = (currentSeason) => ({
