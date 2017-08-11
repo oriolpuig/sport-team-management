@@ -1,0 +1,6 @@
+{
+  "name": "AdminDashboard",
+  "main": "./AdminDashboard.jsx",
+  "private": true,
+  "version": "0.0.0"
+}

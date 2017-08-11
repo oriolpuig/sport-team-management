@@ -4,7 +4,7 @@ import { Switch, Redirect, Route } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Col, Grid, Row } from 'react-flexbox-grid';
 import { AdminFooter, AdminMenu, AdminPageHeader, AdminSidebar } from '../../components';
-import { AdminDashboard, AdminSeason } from '../../../pages';
+import { AdminCompetition, AdminDashboard, AdminSeason } from '../../../pages';
 
 const AdminLayout = ({ match }) => (
   // <div className="fixed-sidebar fixed-nav fixed-nav-basic">
@@ -15,6 +15,7 @@ const AdminLayout = ({ match }) => (
         <AdminMenu />
         <AdminPageHeader location={window.location} />
         <Route path="/admin/dashboard" component={AdminDashboard} />
+        <Route path="/admin/competitions" render={AdminCompetition}></Route>
         <Route path="/admin/seasons" component={AdminSeason} />
         <Redirect from="/admin" to="/admin/dashboard" />
         <AdminFooter />

@@ -22,6 +22,8 @@ const DELETE_SEASON = 'season/DELETE_SEASON';
 const DELETE_SEASON_SUCCESS = 'season/DELETE_SEASON_SUCCESS';
 const DELETE_SEASON_FAIL = 'season/DELETE_SEASON_FAIL';
 
+const SET_CURRENT_SEASON = 'season/SET_CURRENT_SEASON';
+
 /* REDUCER
  =============================================================================================== */
 const initState = {
@@ -52,15 +54,18 @@ export default function reducer(state = initState, action = {}) {
     case SAVE_SEASON:
     case UPDATE_SEASON:
     case DELETE_SEASON:
-      return { ...state, isLoaded: false, isLoading: true };
+      return { ...state, currentSeason: null, isLoaded: false, isLoading: true };
     case SAVE_SEASON_SUCCESS:
     case UPDATE_SEASON_SUCCESS:
     case DELETE_SEASON_SUCCESS:
-      return { ...state, isLoaded: true, isLoading: false };
+      return { ...state, currentSeason: null, isLoaded: true, isLoading: false };
     case SAVE_SEASON_FAIL:
     case UPDATE_SEASON_FAIL:
     case DELETE_SEASON_FAIL:
-      return { ...state, isLoaded: false, isLoading: false };
+      return { ...state, currentSeason: null, isLoaded: false, isLoading: false };
+
+    case SET_CURRENT_SEASON:
+      return { ...state, currentSeason: action.currentSeason };
 
     default:
       return { ...state };
@@ -93,4 +98,9 @@ export const updateSeason = (id, season) => ({
 export const deleteSeason = (id) => ({
   types: [DELETE_SEASON, DELETE_SEASON_SUCCESS, DELETE_SEASON_FAIL],
   promise: () => SeasonService.deleteSeason(id),
+});
+
+export const setCurrentSeason = (currentSeason) => ({
+  type: SET_CURRENT_SEASON,
+  currentSeason,
 });

@@ -1,0 +1,6 @@
+{
+  "name": "AdminCompetitionManage",
+  "main": "./AdminCompetitionManage.jsx",
+  "private": true,
+  "version": "0.0.0"
+}

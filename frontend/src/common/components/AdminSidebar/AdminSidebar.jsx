@@ -30,15 +30,17 @@ class AdminSidebar extends Component {
                 <li><a href="#"> Logout</a></li>
               </ul>
             </div>
-            <div className="logo-element">
-              IN+
-                            </div>
+            <div className="logo-element">IN+</div>
           </li>
           <li className={this.activeRoute("/admin/dashboard")}>
             <Link to="/admin/dashboard"><i className="fa fa-th-large"></i> <span className="nav-label">Dashboard</span></Link>
           </li>
-          <li className={this.activeRoute("/admin/seasons")}>
-            <Link to="/admin/seasons"><i className="fa fa-th-large"></i> <span className="nav-label">Seasons</span></Link>
+          <li>
+            <a href="#"><i className="fa fa-bar-chart-o"></i> <span className="nav-label">Competitions</span><span className="fa arrow"></span></a>
+            <ul className="nav nav-second-level collapse">
+              <li><Link to="/admin/competitions/list">Show competitions</Link></li>
+              <li><Link to="/admin/competitions/manage">Manage</Link></li>
+            </ul>
           </li>
         </ul>
       </nav>

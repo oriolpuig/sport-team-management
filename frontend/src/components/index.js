@@ -1,9 +1,9 @@
-import AdminSeasonAdd from './AdminSeasonAdd';
+import AdminCompetitionManage from './AdminCompetitionManage';
+import AdminSeasonEdit from './AdminSeasonEdit';
 import AdminSeasonList from './AdminSeasonList';
-import AdminSeasonUpdate from './AdminSeasonUpdate';
 
 export {
-  AdminSeasonAdd,
+  AdminCompetitionManage,
+  AdminSeasonEdit,
   AdminSeasonList,
-  AdminSeasonUpdate,
 };
