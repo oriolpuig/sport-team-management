@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Formsy from 'formsy-react';
+import cx from 'classnames';
 
 class CustomForm extends Component {
   constructor(props) {
@@ -33,6 +34,9 @@ class CustomForm extends Component {
   }
 
   resetForm() {
+    if (this.props.handleCancel) {
+      this.props.handleCancel();
+    }
     this.customForm.reset();
   }
 
@@ -42,9 +46,15 @@ class CustomForm extends Component {
         ref={(c) => this.customForm = c}
         onValidSubmit={this.submit}
         onValid={this.enableButton}
-        onInvalid={this.disableButton}>
+        onInvalid={this.disableButton}
+        className={this.props.formClassName}>
         {this.props.children}
-        <button type="submit" disabled={!this.state.canSubmit}>Save</button>
+        <div className="form-group">
+          <div className="col-sm-12">
+            <button type="submit" className={cx(this.props.submitClassName, { 'hide': !this.props.handleSubmit })} disabled={!this.state.canSubmit}>Save</button>
+            <span className={cx(this.props.cancelClassName, { 'hide': !this.props.handleCancel })} onClick={() => this.resetForm()}>Cancel</span>
+          </div>
+        </div>
       </Formsy.Form>
     );
   }
@@ -52,6 +62,10 @@ class CustomForm extends Component {
 
 CustomForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  handleCancel: PropTypes.func,
+  formClassName: PropTypes.string,
+  submitClassName: PropTypes.string,
+  cancelClassName: PropTypes.string,
 };
 
 export default CustomForm;
