@@ -42,9 +42,6 @@ class AdminSidebar extends Component {
               <li><Link to="/admin/competitions/manage">Manage</Link></li>
             </ul>
           </li>
-          <li className={this.activeRoute("/admin/seasons")}>
-            <Link to="/admin/seasons"><i className="fa fa-th-large"></i> <span className="nav-label">Seasons</span></Link>
-          </li>
         </ul>
       </nav>
     )

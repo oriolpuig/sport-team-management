@@ -1,0 +1,6 @@
+{
+  "name": "AdminSeasonEdit",
+  "main": "./AdminSeasonEdit.jsx",
+  "private": true,
+  "version": "0.0.0"
+}

@@ -6,6 +6,7 @@ class AdminSeasonList extends Component {
     super(props);
 
     this._handleDelete = this._handleDelete.bind(this);
+    this._handleOnClick = this._handleOnClick.bind(this);
   }
 
   componentWillMount() {
@@ -17,15 +18,25 @@ class AdminSeasonList extends Component {
       .then(this.props.getSeasons());
   }
 
+  _handleOnClick(season) {
+    debugger;
+    if (this.props.currentSeason && this.props.currentSeason._id === season._id) {
+      this.props.setCurrentSeason(null)
+    }
+    else {
+      this.props.setCurrentSeason(season)
+    }
+  }
+
   renderRows() {
     return this.props.seasons.map((season, index) => {
       const itemKey = `season-list-${index}`;
       return (
-        <tr key={itemKey}>
-          <td>{index + 1}</td>
-          <td>{season.title}</td>
+        <tr key={itemKey}
+          className={this.props.currentSeason && this.props.currentSeason._id === season._id ? 'active' : ''}>
+          <td onClick={() => this._handleOnClick(season)}>{index + 1}</td>
+          <td onClick={() => this._handleOnClick(season)}>{season.title}</td>
           <td>
-            <Link to={`/admin/seasons/update/${season._id}`} className="btn btn-success">Update</Link>
             <span className="btn btn-danger" onClick={() => this._handleDelete(season._id)}>Delete</span>
           </td>
         </tr>
@@ -39,11 +50,12 @@ class AdminSeasonList extends Component {
         <div className="ibox-title">
           <h5>Seasons list</h5>
           <div className="ibox-tools">
-            <Link to="/admin/seasons/add" className="btn btn-primary btn-xs">Create new season</Link>
+            <span onClick={() => this.props.setCurrentSeason(null)}
+              className="btn btn-primary btn-xs">Add new season</span>
           </div>
         </div>
         <div className="ibox-content">
-          <table className="table table-bordered">
+          <table className="table table-hover">
             <thead>
               <tr>
                 <th>#</th>
