@@ -6,6 +6,7 @@ class AdminSeasonEdit extends Component {
     super(props);
 
     this.submitForm = this.submitForm.bind(this);
+    this.cancelForm = this.cancelForm.bind(this);
   }
 
   submitForm(model) {
@@ -17,6 +18,10 @@ class AdminSeasonEdit extends Component {
       this.props.saveSeason(model)
         .then(this.props.getSeasons());
     }
+  }
+
+  cancelForm() {
+    this.props.setCurrentSeason(null);
   }
 
   renderTitle() {
@@ -31,8 +36,23 @@ class AdminSeasonEdit extends Component {
           {this.renderTitle()}
         </div>
         <div className="ibox-content">
-          <CustomForm handleSubmit={this.submitForm}>
-            <CustomFormInput name="title" value={this.props.currentSeason ? this.props.currentSeason.title : ''} required />
+          <CustomForm
+            handleSubmit={this.submitForm}
+            formClassName="form-horizontal"
+            submitClassName="btn btn-primary pull-right"
+            cancelClassName="btn btn-default pull-right"
+            handleCancel={this.cancelForm}
+          >
+            <div className="form-group">
+              <label className="col-sm-2 control-label">Title</label>
+              <div className="col-sm-10">
+                <CustomFormInput
+                  name="title"
+                  value={this.props.currentSeason ? this.props.currentSeason.title : ''}
+                  required />
+              </div>
+            </div>
+            <div className="hr-line-dashed"></div>
           </CustomForm>
         </div>
       </div>
