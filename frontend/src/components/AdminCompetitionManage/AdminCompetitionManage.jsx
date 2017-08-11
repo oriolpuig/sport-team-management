@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminLeagueList, AdminSeasonList, AdminSeasonEdit } from '../../containers';
+import { AdminLeagueEdit, AdminLeagueList, AdminSeasonEdit, AdminSeasonList } from '../../containers';
 
 const AdminCompetitionManage = () => (
   <div className="wrapper wrapper-content animated fadeInRight">
@@ -10,11 +10,13 @@ const AdminCompetitionManage = () => (
       <div className="col-lg-6">
         <AdminSeasonEdit />
       </div>
+    </div>
+    <div className="row">
       <div className="col-lg-6">
         <AdminLeagueList />
       </div>
       <div className="col-lg-6">
-        <AdminSeasonEdit />
+        <AdminLeagueEdit />
       </div>
     </div>
   </div>
