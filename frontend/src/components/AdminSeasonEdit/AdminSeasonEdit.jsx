@@ -1,31 +1,15 @@
 import React, { Component } from 'react';
 import Formsy from 'formsy-react';
+import { CustomForm } from '../../common/components';
 
 class AdminSeasonEdit extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      canSubmit: false,
-    };
 
-    this.disableButton = this.disableButton.bind(this);
-    this.enableButton = this.enableButton.bind(this);
-    this.submit = this.submit.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
-  disableButton() {
-    this.setState({
-      canSubmit: false
-    });
-  }
-
-  enableButton() {
-    this.setState({
-      canSubmit: true
-    });
-  }
-
-  submit(model) {
+  submitForm(model) {
     if (this.props.currentSeason) {
       this.props.updateSeason(this.props.currentSeason._id, model)
         .then(this.props.getSeasons());
@@ -48,10 +32,9 @@ class AdminSeasonEdit extends Component {
           {this.renderTitle()}
         </div>
         <div className="ibox-content">
-          <Formsy.Form onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
+          <CustomForm handleSubmit={this.submitForm}>
             <MyOwnInput name="title" value={this.props.currentSeason ? this.props.currentSeason.title : ''} required />
-            <button type="submit" disabled={!this.state.canSubmit}>Save</button>
-          </Formsy.Form>
+          </CustomForm>
         </div>
       </div>
     );
