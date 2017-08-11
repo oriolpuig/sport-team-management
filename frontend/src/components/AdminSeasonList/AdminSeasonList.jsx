@@ -64,10 +64,11 @@ class AdminSeasonList extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.props.seasons.length > 0 ? this.renderRows() :
-                <tr>
-                  <td colSpan="3">No data</td>
-                </tr>
+              {
+                this.props.seasons.length > 0 ? this.renderRows() :
+                  <tr>
+                    <td colSpan="3" className="text-center">No data</td>
+                  </tr>
               }
             </tbody>
           </table>

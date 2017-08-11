@@ -1,0 +1,6 @@
+{
+  "name": "AdminLeagueList",
+  "main": "./AdminLeagueList.jsx",
+  "private": true,
+  "version": "0.0.0"
+}
