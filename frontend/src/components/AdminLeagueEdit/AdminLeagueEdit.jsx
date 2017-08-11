@@ -39,8 +39,8 @@ class AdminLeagueEdit extends Component {
           <CustomForm
             handleSubmit={this.submitForm}
             formClassName="form-horizontal"
-            submitClassName="btn btn-primary pull-right"
-            cancelClassName="btn btn-default pull-right"
+            submitClassName="btn btn-primary"
+            cancelClassName="btn btn-default"
             handleCancel={this.cancelForm}
           >
             <div className="form-group">

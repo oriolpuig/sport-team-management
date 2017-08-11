@@ -50,7 +50,7 @@ class CustomForm extends Component {
         className={this.props.formClassName}>
         {this.props.children}
         <div className="form-group">
-          <div className="col-sm-12">
+          <div className="col-sm-12 text-center">
             <button type="submit" className={cx(this.props.submitClassName, { 'hide': !this.props.handleSubmit })} disabled={!this.state.canSubmit}>Save</button>
             <span className={cx(this.props.cancelClassName, { 'hide': !this.props.handleCancel })} onClick={() => this.resetForm()}>Cancel</span>
           </div>
