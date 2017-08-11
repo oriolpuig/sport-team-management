@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Switch, Redirect, Route } from 'react-router-dom';
-import { AdminSeasonAdd, AdminSeasonList, AdminSeasonUpdate } from '../containers';
+import { AdminSeasonAdd, AdminSeasonList, AdminSeasonUpdate } from '../../containers';
 
 const AdminSeason = () => (
   <div className="wrapper wrapper-content animated fadeInRight">

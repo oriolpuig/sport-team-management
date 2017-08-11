@@ -7,6 +7,7 @@ class AdminSeasonList extends Component {
 
     this._handleDelete = this._handleDelete.bind(this);
   }
+
   componentWillMount() {
     this.props.getSeasons();
   }
@@ -38,9 +39,7 @@ class AdminSeasonList extends Component {
         <div className="ibox-title">
           <h5>Seasons list</h5>
           <div className="ibox-tools">
-            <a className="collapse-link">
-              <i className="fa fa-chevron-up"></i>
-            </a>
+            <Link to="/admin/seasons/add" className="btn btn-primary btn-xs">Create new season</Link>
           </div>
         </div>
         <div className="ibox-content">
