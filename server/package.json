@@ -1,7 +1,7 @@
 {
-  "name": "celtic-les-corts-website",
+  "name": "backend",
   "version": "0.0.0",
-  "description": "API of Celtic Les Corts",
+  "description": "Backend of Sport Team",
   "main": "./app.js",
   "scripts": {
     "lint": "eslint .",
@@ -9,7 +9,7 @@
     "prestart": "npm install",
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --colors --R spec ./**/*.spec.js"
   },
-  "repository": "https://github.com/oriolpuig/celtic-les-corts-website.git",
+  "repository": "https://github.com/oriolpuig/sport-team-management.git",
   "author": "Oriol Puig <oriol.puig90@gmail.com>",
   "license": "MIT",
   "dependencies": {

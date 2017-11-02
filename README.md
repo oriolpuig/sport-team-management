@@ -1,6 +1,5 @@
-# celtic-les-corts-website
-Website of Celtic Les Corts
-
+# sport-team-management
+Website of a sport team
 
 DB Documentation: https://openfootball.github.io/
 

@@ -1,12 +1,12 @@
 {
   "name": "frontend",
   "version": "0.0.0",
-  "description": "Website of Celtic Les Corts",
+  "description": "Frontend of Sport Team",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --watch --config webpack/dev.config.js --host 0.0.0.0 --port 3000"
   },
-  "repository": "https://github.com/oriolpuig/celtic-les-corts-website.git",
+  "repository": "https://github.com/oriolpuig/sport-team-management.git",
   "author": "Oriol Puig <oriol.puig90@gmail.com>",
   "license": "MIT",
   "dependencies": {
